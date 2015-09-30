@@ -1,3 +1,14 @@
 body {
     background: #e2e2e2;
 }
+
+
+.Wall table {
+    border-collapse: collapse;
+}
+.Wall table td,
+.Wall table th{
+    text-align: left;
+    padding:10px;
+    border:1px solid black;
+}
