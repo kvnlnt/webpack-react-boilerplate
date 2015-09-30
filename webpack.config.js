@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var rimraf = require('rimraf');
 var path = require('path');
+var cssnext = require('cssnext');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
 
@@ -50,8 +52,17 @@ module.exports = {
               test: /\.js$/,
               loaders: ['babel'],
               include: path.join(__dirname, 'src')
+            },
+            {
+                test:   /\.css$/,
+                loader: "style-loader!css-loader!postcss-loader",
+                include: path.join(__dirname, 'src')
             }
         ]
+    },
+
+    postcss: function() {
+        return [cssnext, autoprefixer];
     }
     
 };
